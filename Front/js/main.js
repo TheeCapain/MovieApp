@@ -4,31 +4,29 @@ function out(text) {
   console.log(text)
 }
 
-
 async function callMovieList() {
   return fetch(movies).then(response => response.json())
 }
 
 async function displayTable() {
   const movieList = await callMovieList();
-
   for (let movie of movieList) {
-    for (let i = 0; i<movieList.length; i++){
-      let parent = document.getElementById('table-parent');
-      const tableRow = document.createElement('tr');
-      const title = document.createElement('td');
-      const description = document.createElement('td');
-      let length = document.createElement('td');
-      title.textContent = movie.movieTitle;
-      console.log(title)
-      description.textContent = movie.movieDescription;
-      length = movie.movieLength;
-      tableRow.append(title)
-      tableRow.append(description);
-      tableRow.append(length)
-      parent.append(tableRow)
-    }
-
+    let parent = document.getElementById('movie-content');
+    //each movie box
+    let movieOverview = document.createElement('div')
+    movieOverview.classList.add('movie-overview')
+    //the movie poster
+    let poster = document.createElement('img')
+    poster.classList.add('movie-poster')
+    poster.src = movie.moviePosterHref
+    //the movie title
+    let title = document.createElement('div')
+    title.classList.add('movie-title')
+    title.innerText = movie.movieTitle
+    out(movie)
+    parent.append(movieOverview)
+    movieOverview.append(poster)
+    movieOverview.append(title)
   }
 }
 

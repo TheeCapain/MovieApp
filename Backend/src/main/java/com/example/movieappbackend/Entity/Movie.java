@@ -2,28 +2,21 @@ package com.example.movieappbackend.Entity;
 
 import com.example.movieappbackend.component.MovieComponent;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class Movie extends MovieComponent {
+public class Movie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int movieId;
     private String movieTitle;
-    private String movieDirector;
     private String movieDescription;
     private int movieLength;
+    @Column(length = 999)
     private String moviePosterHref;
 
 
-    public Movie(String movieTitle, String movieDescription){
-        this.movieTitle = movieTitle;
-        this.movieDescription = movieDescription;
-    }
     public void displayMovieInfo(){
         System.out.println(movieTitle + " " + movieDescription);
     }

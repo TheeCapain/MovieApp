@@ -20,4 +20,8 @@ public class MovieService {
     public void saveMovie(Movie movie){
         movieRepository.save(movie);
     }
+
+    public  Movie postNewMovie(Movie movie){
+        return movieRepository.save(movie);
+    }
 }
