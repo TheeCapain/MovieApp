@@ -1,26 +1,26 @@
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  margin:0;
+  margin: 0;
   background-color: #555555;
 }
 
-.content{
+.content {
   margin: auto;
   width: 80%;
   background-color: #130b0b;
 }
 
-.add-movie{
+.add-movie {
   display: inline-block;
   width: 100%;
 }
 
-.add-movie input{
+.add-movie input {
   height: 25px;
   width: 150px;
 }
@@ -33,13 +33,15 @@ body {
 
 .movie-overview {
   display: inline-block;
+  zoom: 100%;
   text-align: center;
-max-height: 415px;
+  max-height: 415px;
   padding: 3%;
+  transition: zoom 2s;
 }
 
-.movie-overview:hover{
-  zoom: 105%;
+.movie-overview:hover {
+  zoom: 105%
 }
 
 .movie-poster {
@@ -47,7 +49,7 @@ max-height: 415px;
   width: 200px;
 }
 
-.movie-title{
+.movie-title {
   color: white;
 }
 
