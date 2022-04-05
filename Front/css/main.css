@@ -15,6 +15,20 @@ body {
   background-color: #130b0b;
 }
 
+.add-button{
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
 .add-movie {
   display: inline-block;
   width: 100%;
