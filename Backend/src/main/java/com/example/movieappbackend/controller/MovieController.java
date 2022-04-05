@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -21,10 +22,15 @@ public class MovieController {
         return movieService.getAllMovies();
     }
 
+    @GetMapping("/{id}")
+    public Optional<Movie> getSingleMovie(@PathVariable int id){
+        return movieService.getSingleMovie(id);
+    }
+
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
     public Movie postMovie(@RequestBody Movie movie){
-        return movieService.postNewMovie(movie);
+        return movieService.saveMovie(movie);
     }
 
 }

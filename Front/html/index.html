@@ -4,24 +4,35 @@
   <meta charset="utf-8">
   <title></title>
   <link rel="stylesheet" href="../css/main.css">
-
+  <link rel="stylesheet" href="../css/fragments.css">
 </head>
 <body>
+<div id="header"></div>
+
 <!--Content goes here -->
 <div class="content">
-  <button>test</button>
+  <div class="add-movie">
+    <form action="http://localhost:8080/api/movie/add" method="post" id="newMovieForm">
+      <input type="text" name="movieTitle" placeholder="Insert movie title here">
+      <button type="submit" id="submit">Add movie</button>
+    </form>
+  </div>
 </div>
+
 <!--Movies go here -->
 <div id="movie-content">
   <div class="movie-overview">
     <img class="movie-poster" src="../img/z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg" height="1500" width="1000"/>
     <div class="movie-titel">Test Titel</div>
   </div>
-
-
 </div>
 
-<script src="../js/main.js"></script>
+
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="../js/fragments.js"></script>
+<script src="../js/moviecontrol.js"></script>
+<script src="../js/main.js"></script>
 
 </html>

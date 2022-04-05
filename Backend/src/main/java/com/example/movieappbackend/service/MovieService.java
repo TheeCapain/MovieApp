@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class MovieService {
@@ -17,11 +18,12 @@ public class MovieService {
         return movieRepository.findAll();
     }
 
-    public void saveMovie(Movie movie){
-        movieRepository.save(movie);
+    public Optional<Movie> getSingleMovie(int id){
+        return movieRepository.findById(id);
     }
 
-    public  Movie postNewMovie(Movie movie){
-        return movieRepository.save(movie);
+    public Movie saveMovie(Movie movie){
+        movieRepository.save(movie);
+        return movie;
     }
 }
