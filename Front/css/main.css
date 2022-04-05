@@ -17,6 +17,12 @@ body {
 
 .add-movie{
   display: inline-block;
+  width: 100%;
+}
+
+.add-movie input{
+  height: 25px;
+  width: 150px;
 }
 
 #movie-content {
@@ -27,15 +33,22 @@ body {
 
 .movie-overview {
   display: inline-block;
-  align-content: center;
   text-align: center;
+max-height: 415px;
   padding: 3%;
+}
+
+.movie-overview:hover{
+  zoom: 105%;
 }
 
 .movie-poster {
   height: 300px;
   width: 200px;
+}
 
+.movie-title{
+  color: white;
 }
 
 

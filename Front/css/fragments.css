@@ -1,4 +1,31 @@
-#header{
+#header {
   height: 50px;
   width: 100%;
+  background-color: #3a3a3a;
+  display: inline-block;
+}
+
+#navbar{
+  width: 100%;
+}
+
+#navbar ul{
+  margin-top: 5px;
+}
+
+#navbar li:first-child{
+  margin-left: 10%;
+  margin-right: 59%;
+}
+
+#navbar li{
+  font-size: 18px;
+  display: inline-block;
+  color: white;
+  margin-left: 10px;
+}
+
+#navbar li a{
+  text-decoration: none;
+  color: white;
 }
