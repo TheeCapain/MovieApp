@@ -11,9 +11,11 @@
 
 <!--Content goes here -->
 <div class="content">
+  <!--Knap til at tilføje film-->
   <div class="add-movie">
     <form action="http://localhost:8080/api/movie/add" method="post" id="newMovieForm">
       <input type="text" name="movieTitle" placeholder="Insert movie title here">
+      <input type="text" name="moviePosterHref" placeholder="Poster link here">
       <button type="submit" id="submit">Add movie</button>
     </form>
   </div>

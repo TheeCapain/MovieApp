@@ -7,32 +7,32 @@ function createFormEventListener(){
   movieForm.addEventListener('submit', handleFormSubmit);
 }
 
-async function handleFormSubmit(event){
+async function handleFormSubmit(event) {
+  //preventDefault forhindrer form i at udføre default submit. altås sende sig selv til backend.
   event.preventDefault();
   const form = event.currentTarget;
-  const url = form.action
+  const url = form.action;
   out(form);
   out(url);
-
   try {
     const formData = new FormData(form);
-    const responseData = await postMovieAsJson(url, formData);
+    const responseData = await postFormDataAsJson(url, formData);
     out(responseData);
-    alert(formData.get(movieTitle) + 'er lavet');
-  } catch (err){
-    alert(err.message)
-    out(err)
+    alert(formData.get('movieTitle') + ' er oprettet' + 'moviePosterHref');
+
+
+  } catch (err) {
+    alert(err.message);
+    out(err);
   }
 }
 
-async function postMovieAsJson(url, formData) {
-  out(formData.entries)
-  const plainFormData = Object.fromEntries(formData.entries);
-  out(plainFormData)
+async function postFormDataAsJson(url, formData) {
+  out(formData.entries());
+  const plainFormData = Object.fromEntries(formData.entries());
+  out(plainFormData);
 
-  plainFormData.movieTitle = {};
-
-  const formDataJsonString = JSON.stringify(plainFormData)
+  const formDataJsonString = JSON.stringify(plainFormData);
 
   const fetchOptions = {
     method: "POST",
