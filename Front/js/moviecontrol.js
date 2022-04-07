@@ -2,25 +2,32 @@ document.addEventListener('DOMContentLoaded', createFormEventListener);
 
 let movieForm;
 
-function createFormEventListener(){
+function createFormEventListener() {
   movieForm = document.getElementById('newMovieForm');
   movieForm.addEventListener('submit', handleFormSubmit);
 }
+
+function validateMovieTitle(data) {
+  if (data.get('movieTitle') || data.get('moviePosterHref') === "") {
+    alert('Missing title')
+    return null
+  }
+}
+
 
 async function handleFormSubmit(event) {
   //preventDefault forhindrer form i at udføre default submit. altås sende sig selv til backend.
   event.preventDefault();
   const form = event.currentTarget;
   const url = form.action;
-  out(form);
-  out(url);
+
   try {
     const formData = new FormData(form);
-    const responseData = await postFormDataAsJson(url, formData);
-    out(responseData);
-    alert(formData.get('movieTitle') + ' er oprettet' + 'moviePosterHref');
 
-
+    if (!validateMovieTitle(formData) === false) {
+      await postFormDataAsJson(url, formData);
+      alert(formData.get('movieTitle') + ' er oprettet' + 'moviePosterHref');
+    }
   } catch (err) {
     alert(err.message);
     out(err);

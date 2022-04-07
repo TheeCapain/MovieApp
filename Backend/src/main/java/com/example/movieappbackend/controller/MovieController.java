@@ -1,6 +1,7 @@
 package com.example.movieappbackend.controller;
 
 import com.example.movieappbackend.Entity.Movie;
+import com.example.movieappbackend.component.MovieComponent;
 import com.example.movieappbackend.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,7 +30,7 @@ public class MovieController {
 
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
-    public Movie postMovie(@RequestBody Movie movie){
+    public MovieComponent postMovie(@RequestBody Movie movie){
         return movieService.saveMovie(movie);
     }
 

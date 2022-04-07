@@ -24,7 +24,7 @@ body {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 4px;
   cursor: pointer;
   border-radius: 50%;
 }
@@ -32,11 +32,6 @@ body {
 .add-movie {
   display: inline-block;
   width: 100%;
-}
-
-.add-movie input {
-  height: 25px;
-  width: 150px;
 }
 
 #movie-content {

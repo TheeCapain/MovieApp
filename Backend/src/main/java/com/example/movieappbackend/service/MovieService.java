@@ -1,6 +1,7 @@
 package com.example.movieappbackend.service;
 
 import com.example.movieappbackend.Entity.Movie;
+import com.example.movieappbackend.component.MovieComponent;
 import com.example.movieappbackend.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -22,7 +23,7 @@ public class MovieService {
         return movieRepository.findById(id);
     }
 
-    public Movie saveMovie(Movie movie){
+    public MovieComponent saveMovie(Movie movie){
         movieRepository.save(movie);
         return movie;
     }
