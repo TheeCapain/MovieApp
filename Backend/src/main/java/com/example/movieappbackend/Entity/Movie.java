@@ -1,6 +1,7 @@
 package com.example.movieappbackend.Entity;
 
 import com.example.movieappbackend.component.MovieComponent;
+import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 
@@ -10,6 +11,7 @@ public class Movie extends MovieComponent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int movieId;
+    @NotNull
     private String movieTitle;
     private String movieDescription;
     private int movieLength;

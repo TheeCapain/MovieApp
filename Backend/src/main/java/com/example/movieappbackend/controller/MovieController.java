@@ -24,7 +24,7 @@ public class MovieController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Movie> getSingleMovie(@PathVariable int id){
+    public Movie getSingleMovie(@PathVariable int id){
         return movieService.getSingleMovie(id);
     }
 
@@ -33,5 +33,4 @@ public class MovieController {
     public MovieComponent postMovie(@RequestBody Movie movie){
         return movieService.saveMovie(movie);
     }
-
 }

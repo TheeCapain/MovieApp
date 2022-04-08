@@ -15,7 +15,7 @@ body {
   background-color: #130b0b;
 }
 
-.add-button{
+.add-button {
   background-color: #04AA6D; /* Green */
   border: none;
   color: white;
@@ -47,6 +47,10 @@ body {
   max-height: 415px;
   padding: 3%;
   transition: zoom 2s;
+}
+
+.movie-overview a {
+  display: block;
 }
 
 .movie-overview:hover {

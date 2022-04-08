@@ -2,12 +2,12 @@ package com.example.movieappbackend.service;
 
 import com.example.movieappbackend.Entity.Movie;
 import com.example.movieappbackend.component.MovieComponent;
+import com.example.movieappbackend.exception.ResourceNotFoundException;
 import com.example.movieappbackend.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
 
 @Component
 public class MovieService {
@@ -19,8 +19,8 @@ public class MovieService {
         return movieRepository.findAll();
     }
 
-    public Optional<Movie> getSingleMovie(int id){
-        return movieRepository.findById(id);
+    public Movie getSingleMovie(int id){
+        return movieRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Movie not found"));
     }
 
     public MovieComponent saveMovie(Movie movie){

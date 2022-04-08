@@ -1,7 +1,7 @@
 package com.example.movieappbackend.component;
 
 public abstract class MovieComponent {
-
+/*
     public void add(MovieComponent movieComponent) {
         throw new UnsupportedOperationException();
     }
@@ -29,5 +29,7 @@ public abstract class MovieComponent {
     public void displayMovieInfo(){
         throw new UnsupportedOperationException();
     }
+
+ */
 
 }
