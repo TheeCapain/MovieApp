@@ -13,7 +13,7 @@ async function displayTable() {
   for (let movie of movieList) {
     let parent = document.getElementById('movie-content');
     let aTag = document.createElement('a')
-    aTag.href = "www.google.com"
+    aTag.href = "api/movie/" + movie.movieId
     //each movie box
     let movieOverview = document.createElement('div')
     movieOverview.classList.add('movie-overview')
@@ -42,12 +42,11 @@ function createFormEventListener() {
 }
 
 function validateMovieTitle(data) {
-  if (data.get('movieTitle') || data.get('moviePosterHref') === "") {
-    alert('Missing title')
+  if (data.get('movieTitle')==="" || data.get('moviePosterHref') ==="") {
+    alert('Missing title or url')
     return null
-  }
+  } else return data
 }
-
 
 async function handleFormSubmit(event) {
   //preventDefault forhindrer form i at udføre default submit. altås sende sig selv til backend.
