@@ -1,5 +1,5 @@
 const movies = "http://localhost:8080/api/movie/all-movies"
-
+const sortedMovies = "http://localhost:8080/api/movie/moviesort"
 document.addEventListener('DOMContentLoaded', createFormEventListener);
 
 let movieForm;
@@ -8,8 +8,15 @@ async function callMovieList() {
   return fetch(movies).then(response => response.json())
 }
 
+async function callSortedMovies() {
+  return fetch(sortedMovies).then(response => response.json())
+}
+
+const sortBtn = document.getElementById("sort")
+
 async function displayTable() {
-  const movieList = await callMovieList();
+  const movieList = await callSortedMovies();
+
   for (let movie of movieList) {
     let parent = document.getElementById('movie-content');
     let aTag = document.createElement('a')
@@ -42,7 +49,7 @@ function createFormEventListener() {
 }
 
 function validateMovieTitle(data) {
-  if (data.get('movieTitle')==="" || data.get('moviePosterHref') ==="") {
+  if (data.get('movieTitle') === "" || data.get('moviePosterHref') === "") {
     alert('Missing title or url')
     return null
   } else return data

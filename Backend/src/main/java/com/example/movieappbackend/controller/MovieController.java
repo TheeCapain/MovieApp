@@ -67,7 +67,7 @@ public class MovieController {
 
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
-    public MovieComponent postMovie(@RequestBody Movie movie) {
+    public Movie postMovie(@RequestBody Movie movie) {
         return movieService.saveMovie(movie);
     }
 }

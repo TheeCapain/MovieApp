@@ -6,7 +6,7 @@ import com.sun.istack.NotNull;
 import javax.persistence.*;
 
 @Entity
-public class Movie extends MovieComponent {
+public class Movie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
