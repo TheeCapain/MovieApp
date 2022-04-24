@@ -1,7 +1,6 @@
 package com.example.movieappbackend.controller;
 
 import com.example.movieappbackend.Entity.Movie;
-import com.example.movieappbackend.component.MovieComponent;
 import com.example.movieappbackend.repository.MovieRepository;
 import com.example.movieappbackend.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,4 +69,10 @@ public class MovieController {
     public Movie postMovie(@RequestBody Movie movie) {
         return movieService.saveMovie(movie);
     }
+
+    @GetMapping("/movie-title/{movieTitle}")
+    public List<Movie> getMovieByTitle(String movieTitle) {
+        return movieService.findMovieByTitle(movieTitle);
+    }
+
 }

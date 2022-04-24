@@ -51,6 +51,8 @@ function createFormEventListener() {
 function validateMovieTitle(data) {
   if (data.get('movieTitle') === "" || data.get('moviePosterHref') === "") {
     alert('Missing title or url')
+
+    //skal sørge for at posterHref er en href
     return null
   } else return data
 }
