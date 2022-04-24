@@ -9,7 +9,6 @@ function fetchMovieByTitle(title) {
 }
 
 async function getByTitle() {
-  location.reload();
   const title = searchByTitleField.value;
   const movieList = await fetchMovieByTitle(title)
 

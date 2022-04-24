@@ -12,8 +12,6 @@ async function callSortedMovies() {
   return fetch(sortedMovies).then(response => response.json())
 }
 
-const sortBtn = document.getElementById("sort")
-
 async function displayTable() {
   const movieList = await callSortedMovies();
 
@@ -42,7 +40,6 @@ async function displayTable() {
 
 displayTable()
 
-//Sørger fo
 function createFormEventListener() {
   movieForm = document.getElementById('newMovieForm');
   movieForm.addEventListener('submit', handleFormSubmit);
