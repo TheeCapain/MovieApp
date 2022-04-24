@@ -27,8 +27,8 @@ public class MovieService {
         return movie;
     }
 
-    public List<Movie> findMovieByTitle(String title){
-        return movieRepository.findMovieByMovieTitle(title);
+    public List<Movie> findMovieByTitle(String movieTitle){
+        return movieRepository.findMovieByMovieTitle(movieTitle);
     }
 
 }
