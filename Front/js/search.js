@@ -4,7 +4,8 @@ const searchByTitleField = document.getElementById("text-input")
 const searchByTitleBtn = document.getElementById("search-button-input")
 
 
-function fetchMovieByTitle(title) {
+function fetchMovieByTitle() {
+  const title = searchByTitleField.value;
   return fetch(searchMovie + title).then(response => response.json());
 }
 
@@ -35,4 +36,4 @@ async function getByTitle() {
   }
 }
 
-searchByTitleBtn.addEventListener('click', getByTitle)
+searchByTitleBtn.addEventListener('click', displayTable(fetchMovieByTitle()))

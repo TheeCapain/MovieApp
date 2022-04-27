@@ -2,7 +2,8 @@ const movies = "http://localhost:8080/api/movie/all-movies"
 const sortedMovies = "http://localhost:8080/api/movie/moviesort"
 document.addEventListener('DOMContentLoaded', createFormEventListener);
 
-let movieForm;
+
+const movieList = document.getElementById("home")
 
 async function callMovieList() {
   return fetch(movies).then(response => response.json())
@@ -12,9 +13,9 @@ async function callSortedMovies() {
   return fetch(sortedMovies).then(response => response.json())
 }
 
-async function displayTable() {
-  const movieList = await callSortedMovies();
+async function displayTable(list) {
 
+  const movieList = await list;
   for (let movie of movieList) {
     let parent = document.getElementById('movie-content');
     let aTag = document.createElement('a')
@@ -30,15 +31,15 @@ async function displayTable() {
     let title = document.createElement('div')
     title.classList.add('movie-title')
     title.innerText = movie.movieTitle
-    out(movie)
     parent.append(movieOverview)
     movieOverview.append(aTag)
     aTag.append(poster)
     movieOverview.append(title)
   }
 }
+movieList.addEventListener('click', displayTable(callMovieList()))
 
-displayTable()
+
 
 function createFormEventListener() {
   movieForm = document.getElementById('newMovieForm');
@@ -53,6 +54,8 @@ function validateMovieTitle(data) {
     return null
   } else return data
 }
+
+movieList.addEventListener('click', displayTable)
 
 async function handleFormSubmit(event) {
   //preventDefault forhindrer form i at udføre default submit. altås sende sig selv til backend.
@@ -94,3 +97,5 @@ async function postFormDataAsJson(url, formData) {
 
   return response.json();
 }
+
+
